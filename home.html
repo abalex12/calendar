@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ethiopian Calendar Converter</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Enhanced Header Section -->
+    <header class="main-header">
+        <div class="header-container">
+            <div class="header-content">
+                <div class="header-icon">
+                    <i class="fas fa-calendar-alt"></i>
+                </div>
+                <div class="header-text">
+                    <h1 class="header-title">Ethiopian Calendar Converter</h1>
+                    <p class="header-subtitle">Seamlessly convert between Ethiopian and Gregorian calendars</p>
+                </div>
+            </div>
+            <div class="header-stats">
+                <div class="stat-item">
+                    <div class="stat-number">13</div>
+                    <div class="stat-label">Months</div>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat-item">
+                    <div class="stat-number">365</div>
+                    <div class="stat-label">Days</div>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat-item">
+                    <div class="stat-number">7-8</div>
+                    <div class="stat-label">Year Gap</div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="calendar-mode-toggle">
+            <div class="toggle-option active" data-mode="eth-to-greg">
+                <i class="fas fa-arrow-right"></i> Ethiopian to Gregorian
+            </div>
+            <div class="toggle-option" data-mode="greg-to-eth">
+                <i class="fas fa-arrow-left"></i> Gregorian to Ethiopian
+            </div>
+        </div>
+
+        <div class="converter-container">
+            <div class="card" id="input-card">
+                <div class="card-header">
+                    <div class="card-icon">
+                        <i class="fas fa-calendar-plus"></i>
+                    </div>
+                    <h2 class="card-title">Ethiopian Date</h2>
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label">Select Date</label>
+                    <div class="form-row">
+                        <div class="input-group">
+                            <select class="form-select" id="input-year">
+                                <option value="">Year</option>
+                            </select>
+                            <i class="fas fa-chevron-down input-icon"></i>
+                        </div>
+                        <div class="input-group">
+                            <select class="form-select" id="input-month">
+                                <option value="">Month</option>
+                            </select>
+                            <i class="fas fa-chevron-down input-icon"></i>
+                        </div>
+                        <div class="input-group">
+                            <select class="form-select" id="input-day">
+                                <option value="">Day</option>
+                            </select>
+                            <i class="fas fa-chevron-down input-icon"></i>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="error-message" id="error-message"></div>
+            </div>
+
+            <div class="card" id="output-card">
+                <div class="card-header">
+                    <div class="card-icon">
+                        <i class="fas fa-calendar-check"></i>
+                    </div>
+                    <h2 class="card-title">Gregorian Date</h2>
+                </div>
+                
+                <div id="result-container">
+                    <div class="result-card" id="result" style="display: none;">
+                        <div class="result-date" id="result-date"></div>
+                        <div class="result-label" id="result-label">Gregorian Date</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="info-panel">
+            <div class="info-grid">
+                <div class="info-item">
+                    <i class="fas fa-calendar-alt"></i>
+                    <h3>Ethiopian Calendar</h3>
+                    <p>The Ethiopian calendar has 13 months: 12 months of 30 days each and a 13th month of 5 or 6 days.</p>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-sync-alt"></i>
+                    <h3>Automatic Conversion</h3>
+                    <p>Real-time conversion with dynamic day calculation based on the selected month and year.</p>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-mobile-alt"></i>
+                    <h3>Responsive Design</h3>
+                    <p>Works perfectly on all devices with a modern, intuitive interface.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <button class="swap-button" id="swap-mode" title="Switch conversion mode">
+        <i class="fas fa-exchange-alt"></i>
+    </button>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

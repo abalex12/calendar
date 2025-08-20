@@ -465,8 +465,7 @@ class CalendarFeatures {
    static addQuickDateButtons() {
        const quickDates = [
            { label: 'Today', action: 'today' },
-           { label: 'New Year', action: 'new-year' },
-           { label: 'Christmas', action: 'christmas' }
+           { label: 'New Year', action: 'new-year' }
        ];
 
        const quickDateContainer = document.createElement('div');
@@ -517,21 +516,6 @@ class CalendarFeatures {
                    return;
                } else {
                    targetDate = new Date(today.getFullYear(), 0, 1);
-               }
-               break;
-           case 'christmas':
-               if (app.mode === 'eth-to-greg') {
-                   // Ethiopian Christmas (Tir 29)
-                   yearSelect.value = 2017;
-                   monthSelect.value = 5; // Tir
-                   app.updateDays();
-                   setTimeout(() => {
-                       daySelect.value = 29;
-                       app.convert();
-                   }, 100);
-                   return;
-               } else {
-                   targetDate = new Date(today.getFullYear(), 11, 25);
                }
                break;
        }
